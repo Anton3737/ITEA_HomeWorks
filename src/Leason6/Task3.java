@@ -37,9 +37,9 @@ public class Task3 {
         System.out.println("---------------------------------");
 
         System.out.println("Середнє значення: ");
-        double arverageVar = (array[0] + array[1] + array[2]) / 3;
+        double averageVar = (array[0] + array[1] + array[2]) / 3;
 
-        System.out.println(arverageVar);
+        System.out.println(averageVar);
 
     }
 

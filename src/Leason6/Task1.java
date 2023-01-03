@@ -3,39 +3,32 @@ package Leason6;
 import java.util.Scanner;
 
 public class Task1 {
-
-
     public static void main(String[] args) {
 
-
-        Scanner inputCash = new Scanner(System.in);
-
-        for (int i = 0; i <= 6; i++) {
-            double creditCash = inputCash.nextDouble();
-
-            Credit(creditCash);
-        }
-    }
-
-    public static void Credit(double sum) {
-
+        Scanner DepositInput = new Scanner(System.in);
+        double sum = DepositInput.nextDouble();
+        double ResCred;
         final double CREDIT = 700;
+        int tmp = 0;
 
         if (sum == CREDIT) {
             System.out.println("Кредит виплачено");
-        }
-        if (sum < CREDIT) {
-            double creditVar = CREDIT - sum;
-            System.out.println("Кредит не виплачено");
-            System.out.println("Сума боргу складає: " + creditVar);
-        }
-        if (sum > CREDIT) {
-            double creditOver = CREDIT - sum;
+        } else if (sum <= CREDIT) {
+
+
+
+            for (int i = 0; i < 6; i++) {
+
+            }
+
+
+
+
+        } else if (sum > CREDIT) {
+            double creditOverPay = sum - CREDIT;
             System.out.println("Кредит виплачено");
-            System.out.println("Сумма передплати складає: " + creditOver);
+            System.out.println("Сумма передплати складає: " + creditOverPay);
 
         }
     }
-
 }
-
