@@ -11,7 +11,6 @@ public class DerivedClass extends BaseClass {
         MessageMethodMax();
         MaxMethod();
 
-
         System.out.println("----------------------min-------------------------");
         MessageMethodMin();
         MinMethod();
