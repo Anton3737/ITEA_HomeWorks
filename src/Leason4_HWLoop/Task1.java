@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class Task1 {
 
     static void SumMin() {
-
-
         Scanner sc = new Scanner(System.in);
         int A = sc.nextInt();
         int B = sc.nextInt();
