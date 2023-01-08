@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class factorial {
 
     static int FacrorialResault(int inputNumberScan) {
+
         int resault = 1;
 
         for (int i = 1; i <= inputNumberScan; i++) {
