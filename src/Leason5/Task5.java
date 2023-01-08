@@ -18,7 +18,6 @@ public class Task5 {
         if (Methood() == 0) {
             System.out.println("Введене Вами число являється парним");
 
-
         } else {
             System.out.println("Введене Вами число являється НЕ парним");
         }
