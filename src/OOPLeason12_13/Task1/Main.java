@@ -12,7 +12,7 @@ public class Main {
 
         Raccoon Rocket = new Raccoon();
 
-        System.out.println("Конкретна корівка з класу Cow що успдкувала абстрактні методи з абстрактного класу Animal:");
+        System.out.println("Конкретна корівка з класу Cow що успадкувала абстрактні методи з абстрактного класу Animal:");
         Milka.Voice();
         Milka.Food();
         Milka.Kind();
@@ -28,7 +28,7 @@ public class Main {
 
         System.out.println("---------------------------------------");
 
-        System.out.println("Конкретний коник з класу Hors що успдкував абстрактні методи з абстрактного класу Animal:");
+        System.out.println("Конкретний коник з класу Hors що успадкував абстрактні методи з абстрактного класу Animal:");
         Pony.Voice();
         Pony.Food();
         Pony.Kind();
@@ -44,7 +44,7 @@ public class Main {
 
         System.out.println("---------------------------------------");
 
-        System.out.println("Конкретний Лев з класу Lion що успдкував абстрактні методи з абстрактного класу Animal:");
+        System.out.println("Конкретний Лев з класу Lion що успадкував абстрактні методи з абстрактного класу Animal:");
         Simba.Voice();
         Simba.Food();
         Simba.Kind();
@@ -60,7 +60,7 @@ public class Main {
 
         System.out.println("---------------------------------------");
 
-        System.out.println("Конкретний Єнот з класу Raccoon що успдкував абстрактні методи з абстрактного класу Animal:");
+        System.out.println("Конкретний Єнот з класу Raccoon що успадкував абстрактні методи з абстрактного класу Animal:");
         Rocket.Voice();
         Rocket.Food();
         Rocket.Kind();
