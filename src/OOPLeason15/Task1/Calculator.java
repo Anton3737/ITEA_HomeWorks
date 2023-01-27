@@ -11,9 +11,21 @@ public class Calculator implements Addition, Multiple, Division, Subtraction {
     }
 
     @Override
-    public void Div(double A, double B) {
-        double ResDiv = A / B;
-        System.out.println(ResDiv);
+    public void Div(double A, double B) throws CalcExceptions {
+
+//        if (B != 0) {
+//            double ResDiv = A / B;
+//            System.out.println(ResDiv);
+//        } else {
+//            throw new CalcExceptions("You doesn't division on / null , it is not correct operation !!!");
+//        }
+
+        try {
+            double ResDiv = A / B;
+            System.out.println(ResDiv);
+        } catch (ArithmeticException arithmeticException) {
+            throw new CalcExceptions("You doesn't division on / null , it is not correct operation !!!", arithmeticException);
+        }
     }
 
     @Override
@@ -28,30 +40,30 @@ public class Calculator implements Addition, Multiple, Division, Subtraction {
         System.out.println(ResSub);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CalcExceptions {
         Scanner sc = new Scanner(System.in);
+
         double A = sc.nextDouble();
         String symbol = sc.next();
         double B = sc.nextDouble();
 
         Calculator calculator = new Calculator();
 
-        switch (symbol){
+        switch (symbol) {
             case "+":
-                calculator.Add(A,B);
+                calculator.Add(A, B);
                 break;
             case "-":
-                calculator.Sub(A,B);
+                calculator.Sub(A, B);
                 break;
             case "*":
-                calculator.Mul(A,B);
+                calculator.Mul(A, B);
                 break;
             case "/":
-                    calculator.Div(A,B);
+                calculator.Div(A, B);
                 break;
             default:
                 System.out.println("Такої математичної операції не додано в дану програму,спробуйте з (+ - * /)!");
-
         }
     }
 }

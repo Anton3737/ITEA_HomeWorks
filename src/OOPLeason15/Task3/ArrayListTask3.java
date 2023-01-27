@@ -56,6 +56,8 @@ public class ArrayListTask3 {
 
         // Перевіряємо чи пустий список
         System.out.println(DynamicArray.isEmpty());
+
+        DynamicArray.listIterator().hasPrevious();
     }
 }
 
