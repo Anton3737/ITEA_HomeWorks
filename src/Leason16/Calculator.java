@@ -20,7 +20,6 @@ public class Calculator<T> {
 
     public T Addition(T operand1, T operand2) {
 
-
         if (operand1.getClass().equals(Integer.class)) {
             return (T) (Object) ((Integer) operand1 + (Integer) operand2);
         }
@@ -71,79 +70,98 @@ public class Calculator<T> {
     }
 }
 
-class Main {
+//        УСПАДКОВУЮ КЛАС COLORS ДЛЯ МАЙБУТНЬОГО ВІЗУАЛЬНОГО РОЗПОДІЛЕННЯ 
+
+class Main extends Colors {
 
     public static void main(String[] args) {
+//        ПОКИ ЩО ПРАЦЮЄ БЕЗ IF-ELSE
 
         Scanner sc = new Scanner(System.in);
+        System.out.println("**************************");
+
+        System.out.println("Введіть 1й операнд: ");
+        int OperandFirstInteger = sc.nextInt();
+        System.out.println("Введіть 2й операнд: ");
+        int OperandSecondInteger = sc.nextInt();
 
         Calculator<Integer> IntegerCalculate = new Calculator<>();
 
+        System.out.println("Add int " + IntegerCalculate.Addition(OperandFirstInteger, OperandSecondInteger));
+        System.out.println("Sub int " + IntegerCalculate.Substract(OperandFirstInteger, OperandSecondInteger));
+        System.out.println("Div int " + IntegerCalculate.Divide(OperandFirstInteger, OperandSecondInteger));
+        System.out.println("Mul int " + IntegerCalculate.Multiple(OperandFirstInteger, OperandSecondInteger));
+
+        System.out.println("**************************");
+
         Calculator<Double> DoubleCalculate = new Calculator<>();
 
-        if (IntegerCalculate.operand1 instanceof Integer) {
-            System.out.println("Введіть 1й операнд: ");
-            int OperandInt1 = sc.nextInt();
-            System.out.println("Віпрацювала гілка Integer ");
+        System.out.println("Введіть 1й операнд: ");
+        double OperandFirstDouble = sc.nextDouble();
+        System.out.println("Введіть 2й операнд: ");
+        double OperandSecondDouble = sc.nextDouble();
 
-            System.out.println("Введіть оператор : ");
-            String symbol = sc.next();
+        System.out.println("Add double " + DoubleCalculate.Addition(OperandFirstDouble, OperandSecondDouble));
+        System.out.println("Sub double " + DoubleCalculate.Substract(OperandFirstDouble, OperandSecondDouble));
+        System.out.println("Div double " + DoubleCalculate.Divide(OperandFirstDouble, OperandSecondDouble));
+        System.out.println("Mul double " + DoubleCalculate.Multiple(OperandFirstDouble, OperandSecondDouble));
 
-            System.out.println("Введіть 2й операнд: ");
-            int OperandInt2 = sc.nextInt();
+        System.out.println("**************************");
+//        ______________________________________________________________________________________________________________
 
-            switch (symbol) {
-                case "+":
-                    int ResAddInt = IntegerCalculate.Addition(OperandInt1, OperandInt2);
-                    System.out.println(ResAddInt);
-                    break;
-                case "-":
-                    int ResSubInt = IntegerCalculate.Substract(OperandInt1, OperandInt2);
-                    System.out.println(ResSubInt);
-                    break;
-                case "*":
-                    int ResMulInt = IntegerCalculate.Multiple(OperandInt1, OperandInt2);
-                    System.out.println(ResMulInt);
-                    break;
-                case "/":
-                    int ResDivInt = IntegerCalculate.Divide(OperandInt1, OperandInt2);
-                    System.out.println(ResDivInt);
-                    break;
-                default:
-                    break;
-            }
-        } else {
-            System.out.println("Введіть 1й операнд: ");
-            double OperandDouble1 = sc.nextDouble();
-            System.out.println("Віпрацювала гілка Double ");
+//        IF-ELSE ПОБУДОВАНО АЛЕ НЕ РОЗУМІЮ ЯК ВИКОНАТИ РОЗДІЛЕННЯ ГІЛОК ПІД ЧАС ВНЕСЕННЯ ЦІЛОГО АБО ДРОБОВОГО ЧИСЛА
+//        IntegerCalculate.operand1.getClass().equals(IntegerCalculate НЕ ДАЄ БАЖАНОГО РЕЗУЛЬТАТУ
 
-
-            System.out.println("Введіть оператор : ");
-            String symbol = sc.next();
-
-            System.out.println("Введіть 2й операнд: ");
-            double OperandDouble2 = sc.nextDouble();
-
-            switch (symbol) {
-                case "+":
-                    double ResAddDouble = DoubleCalculate.Addition(OperandDouble1, OperandDouble2);
-                    System.out.println(ResAddDouble);
-                    break;
-                case "-":
-                    double ResSubDouble = DoubleCalculate.Substract(OperandDouble1, OperandDouble2);
-                    System.out.println(ResSubDouble);
-                    break;
-                case "*":
-                    double ResMulDouble = DoubleCalculate.Multiple(OperandDouble1, OperandDouble2);
-                    System.out.println(ResMulDouble);
-                    break;
-                case "/":
-                    double ResDivDouble = DoubleCalculate.Divide(OperandDouble1, OperandDouble2);
-                    System.out.println(ResDivDouble);
-                    break;
-                default:
-                    break;
-            }
-        }
+//        if (IntegerCalculate.operand1.getClass().equals(IntegerCalculate)) {
+//            System.out.println("Введіть 1й операнд: ");
+//            int OperandFirstInteger = sc.nextInt();
+//            System.out.println("Введіть оператор : ");
+//            String OperatorSymbol = sc.next();
+//            System.out.println("Введіть 2й операнд: ");
+//            int OperandSecondInteger = sc.nextInt();
+//
+//            switch (OperatorSymbol) {
+//                case "+":
+//                    System.out.println("Add int " + IntegerCalculate.Addition(OperandFirstInteger, OperandSecondInteger));
+//                    break;
+//                case "-":
+//                    System.out.println("Sub int " + IntegerCalculate.Substract(OperandFirstInteger, OperandSecondInteger));
+//                    break;
+//                case "*":
+//                    System.out.println("Mul int " + IntegerCalculate.Multiple(OperandFirstInteger, OperandSecondInteger));
+//                    break;
+//                case "/":
+//                    System.out.println("Div int " + IntegerCalculate.Divide(OperandFirstInteger, OperandSecondInteger));
+//                    break;
+//                default:
+//                    System.out.println("Ви ввели неіснуючий математичний оператор для розрахунку + - * / ");
+//                    break;
+//            }
+//        } else {
+//            System.out.println("Введіть 1й операнд: ");
+//            double OperandFirstDouble = sc.nextDouble();
+//            System.out.println("Введіть оператор : ");
+//            String OperatorSymbol = sc.next();
+//            System.out.println("Введіть 2й операнд: ");
+//            double OperandSecondDouble = sc.nextDouble();
+//
+//            switch (OperatorSymbol) {
+//                case "+":
+//                    System.out.println("Add double " + DoubleCalculate.Addition(OperandFirstDouble, OperandSecondDouble));
+//                    break;
+//                case "-":
+//                    System.out.println("Sub double" + DoubleCalculate.Substract(OperandFirstDouble, OperandSecondDouble));
+//                    break;
+//                case "*":
+//                    System.out.println("Mul double" + DoubleCalculate.Multiple(OperandFirstDouble, OperandSecondDouble));
+//                    break;
+//                case "/":
+//                    System.out.println("Div double" + DoubleCalculate.Divide(OperandFirstDouble, OperandSecondDouble));
+//                    break;
+//                default:
+//                    System.out.println("Ви ввели неіснуючий математичний оператор для розрахунку + - * / ");
+//                    break;
+//            }
+//        }
     }
 }
