@@ -26,11 +26,11 @@ public class Car {
     }
 
 
-    public void Main1(){
+    public void Main1() {
         System.out.println("Hallo");
     }
 
-    static void Main2(){
+    static void Main2() {
         System.out.println("World");
     }
 
@@ -38,8 +38,8 @@ public class Car {
     public static void main(String[] args) {
 
 
-        Car Mercedes = new Car(0.20,200,12000);
-        Car Volvo = new Car(0.300,190);
+        Car Mercedes = new Car(0.20, 200, 12000);
+        Car Volvo = new Car(0.300, 190);
         Volvo.price = 20000;
 
         Car ZAZ = new Car();
@@ -48,11 +48,11 @@ public class Car {
         ZAZ.price = 1000000;
 
 
-        System.out.println(Mercedes.weight+ " " + Mercedes.speed + " " + Mercedes.price);
+        System.out.println(Mercedes.weight + " " + Mercedes.speed + " " + Mercedes.price);
 
-        System.out.println(Volvo.weight+ " " + Volvo.speed + " " + Volvo.price);
+        System.out.println(Volvo.weight + " " + Volvo.speed + " " + Volvo.price);
 
-        System.out.println(ZAZ.weight+ " " + ZAZ.speed + " " + ZAZ.price);
+        System.out.println(ZAZ.weight + " " + ZAZ.speed + " " + ZAZ.price);
 
 
         Main2();
@@ -60,7 +60,6 @@ public class Car {
         Car car1 = new Car();
 
         car1.Main1();
-
 
 
     }
