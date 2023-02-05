@@ -145,11 +145,14 @@ class Main extends Colors {
                 default:
                     System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
                     break;
+
+
             }
         }
     }
 }
 
+// 06/02/23
 
 // ПРАЦЮЮЧИЙ АЛЕ НЕ СИСТЕМАТИЗОВАНИЙ КОД ЗАКОМЕНТОВАНО
 //        System.out.println("**************************");
