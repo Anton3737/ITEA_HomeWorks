@@ -6,7 +6,6 @@ public interface ConverterInterface {
 
     void convertCelsiusTotKelvin();
 
-
     void convertFahrenheitToCelsius();
 
     void convertFahrenheitToKelvin();
