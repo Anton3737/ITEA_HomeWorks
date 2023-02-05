@@ -4,10 +4,10 @@ import OOPLeason15.Task1.Addition;
 
 import java.util.Scanner;
 
-// Оголошуємо клас з Дженериком
+// Оголошуємо клас з "Замінником"
 public class Calculator<GenericType> {
 
-    // Оголошуємо поля з Дженериком
+    // Оголошуємо поля з "Замінником"
     public GenericType operand1;
     public GenericType operand2;
 
@@ -29,7 +29,7 @@ public class Calculator<GenericType> {
     public GenericType Addition(GenericType operand1, GenericType operand2) {
 
         // якщо першой операнд.витягуємо його клас Int порівнюємо його з класом обгорткою Integer і умова є вірною виконується перша гілка якщо ні то порівнюємо з Double
-        // у випадку недостовірності Integer та Double повертаємо нуль.
+        // у випадку хибного Integer-у та Double-у повертаємо нуль.
 
         if (operand1.getClass().equals(Integer.class)) {
             return (GenericType) (Object) ((Integer) operand1 + (Integer) operand2);
@@ -95,7 +95,7 @@ class Main extends Colors {
         System.out.println("**************************");
         System.out.println(ANSI_YELLOW + "Введіть 1й операнд: " + ANSI_RESET);
 
-        // Порівняння в умові if і якщо введене число є int то відпрацьовуємо умову калькуляції по цілочисленим
+        // Порівняння в умові if і якщо введене число є int то відпрацьовуємо умову калькуляції по цілому числу
         // якщо умова false то відпрацьовуємо Double.
         if (sc.hasNextInt()) {
 
@@ -108,7 +108,7 @@ class Main extends Colors {
             System.out.println(ANSI_YELLOW + "Введіть 2й операнд: " + ANSI_RESET);
             int OperandSecond = sc.nextInt();
 
-            // Створюємо обєкт з класом обгорткою Integer та двума операндами.
+            // Створюємо об'єкт з класом обгорткою Integer та двома операндами.
             Calculator<Integer> IntegerCalculate = new Calculator<>(OperandFirst, OperandSecond);
 
             // Калькуляційна конструкція для відпрацювання методів при виборі оператору
@@ -131,7 +131,7 @@ class Main extends Colors {
                     }
                     break;
                 default:
-                    // умова при якій немає сбігу з жодним з операторів
+                    // умова при якій немає збігу з жодним з операторів
                     System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
                     break;
             }
@@ -166,8 +166,6 @@ class Main extends Colors {
                 default:
                     System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
                     break;
-
-
             }
         }
     }
