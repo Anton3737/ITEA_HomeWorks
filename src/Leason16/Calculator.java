@@ -40,7 +40,6 @@ public class Calculator<GenericType> {
         }
         System.out.println();
         return (GenericType) (Object) 0;
-
     }
 
     public GenericType Substract(GenericType operand1, GenericType operand2) {
@@ -95,78 +94,83 @@ class Main extends Colors {
         System.out.println("**************************");
         System.out.println(ANSI_YELLOW + "Введіть 1й операнд: " + ANSI_RESET);
 
-        // Порівняння в умові if і якщо введене число є int то відпрацьовуємо умову калькуляції по цілому числу
-        // якщо умова false то відпрацьовуємо Double.
-        if (sc.hasNextInt()) {
+        // Порівняння в умові if і якщо введене число є int відпрацьовуємо умову калькуляції по цілому числу
+        // якщо умова false відпрацьовуємо Double.
+        try {
 
-            int OperandFirst = sc.nextInt();
-            System.out.println(ANSI_BLUE + "Відпрацювала гілка Integer" + ANSI_RESET);
-            System.out.println("**************************");
-            System.out.println(ANSI_PURPLE + "Введіть оператор : " + ANSI_RESET);
-            String OperatorSymbol = sc.next();
-            System.out.println("**************************");
-            System.out.println(ANSI_YELLOW + "Введіть 2й операнд: " + ANSI_RESET);
-            int OperandSecond = sc.nextInt();
+            if (sc.hasNextInt()) {
 
-            // Створюємо об'єкт з класом обгорткою Integer та двома операндами.
-            Calculator<Integer> IntegerCalculate = new Calculator<>(OperandFirst, OperandSecond);
+                int OperandFirst = sc.nextInt();
+                System.out.println(ANSI_BLUE + "Відпрацювала гілка Integer" + ANSI_RESET);
+                System.out.println("**************************");
+                System.out.println(ANSI_PURPLE + "Введіть оператор : " + ANSI_RESET);
+                String OperatorSymbol = sc.next();
+                System.out.println("**************************");
+                System.out.println(ANSI_YELLOW + "Введіть 2й операнд: " + ANSI_RESET);
+                int OperandSecond = sc.nextInt();
 
-            // Калькуляційна конструкція для відпрацювання методів при виборі оператору
-            switch (OperatorSymbol) {
-                case "+":
-                    System.out.println(ANSI_CYAN + "Add int " + IntegerCalculate.Addition(OperandFirst, OperandSecond) + ANSI_RESET);
-                    break;
-                case "-":
-                    System.out.println(ANSI_CYAN + "Sub int " + IntegerCalculate.Substract(OperandFirst, OperandSecond) + ANSI_RESET);
-                    break;
-                case "*":
-                    System.out.println(ANSI_CYAN + "Mul int " + IntegerCalculate.Multiple(OperandFirst, OperandSecond) + ANSI_RESET);
-                    break;
-                case "/":
-                    // Відпрацювання виключення при виникненні умови ділення на 0
-                    try {
-                        System.out.println(ANSI_CYAN + "Div int " + IntegerCalculate.Divide(OperandFirst, OperandSecond) + ANSI_RESET);
-                    } catch (Exception exception) {
-                        System.err.println("What are you doing dude ? Do you divide on Zero ?");
-                    }
-                    break;
-                default:
-                    // умова при якій немає збігу з жодним з операторів
-                    System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
-                    break;
+                // Створюємо об'єкт з класом обгорткою Integer та двома операндами.
+                Calculator<Integer> IntegerCalculate = new Calculator<>(OperandFirst, OperandSecond);
+
+                // Калькуляційна конструкція для відпрацювання методів при виборі оператору
+                switch (OperatorSymbol) {
+                    case "+":
+                        System.out.println(ANSI_CYAN + "Add int " + IntegerCalculate.Addition(OperandFirst, OperandSecond) + ANSI_RESET);
+                        break;
+                    case "-":
+                        System.out.println(ANSI_CYAN + "Sub int " + IntegerCalculate.Substract(OperandFirst, OperandSecond) + ANSI_RESET);
+                        break;
+                    case "*":
+                        System.out.println(ANSI_CYAN + "Mul int " + IntegerCalculate.Multiple(OperandFirst, OperandSecond) + ANSI_RESET);
+                        break;
+                    case "/":
+                        // Відпрацювання виключення при виникненні умови ділення на 0
+                        try {
+                            System.out.println(ANSI_CYAN + "Div int " + IntegerCalculate.Divide(OperandFirst, OperandSecond) + ANSI_RESET);
+                        } catch (Exception exception) {
+                            System.err.println("What are you doing dude ? Do you divide on Zero ?");
+                        }
+                        break;
+                    default:
+                        // умова при якій немає збігу з жодним з операторів
+                        System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
+                        break;
+                }
+            } else {
+                double OperandFirst = sc.nextDouble();
+                System.out.println(ANSI_BLUE + "Відпрацювала гілка Double" + ANSI_RESET);
+                System.out.println("**************************");
+                System.out.println(ANSI_PURPLE + "Введіть оператор : " + ANSI_RESET);
+                String OperatorSymbol = sc.next();
+                System.out.println("**************************");
+                System.out.println(ANSI_YELLOW + "Введіть 2й операнд: " + ANSI_RESET);
+                double OperandSecond = sc.nextDouble();
+                Calculator<Double> DoubleCalculate = new Calculator<>(OperandFirst, OperandSecond);
+
+                switch (OperatorSymbol) {
+                    case "+":
+                        System.out.println(ANSI_CYAN + "Add double " + DoubleCalculate.Addition(OperandFirst, OperandSecond) + ANSI_RESET);
+                        break;
+                    case "-":
+                        System.out.println(ANSI_CYAN + "Sub double " + DoubleCalculate.Substract(OperandFirst, OperandSecond) + ANSI_RESET);
+                        break;
+                    case "*":
+                        System.out.println(ANSI_CYAN + "Mul double " + DoubleCalculate.Multiple(OperandFirst, OperandSecond) + ANSI_RESET);
+                        break;
+                    case "/":
+                        try {
+                            System.out.println(ANSI_CYAN + "Div double " + DoubleCalculate.Divide(OperandFirst, OperandSecond) + ANSI_RESET);
+                        } catch (Exception exception) {
+                            System.err.println("What are you doing dude ? Do you divide on Zero ?");
+                        }
+                        break;
+                    default:
+                        System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
+                        break;
+                }
             }
-        } else {
-            double OperandFirst = sc.nextDouble();
-            System.out.println(ANSI_BLUE + "Відпрацювала гілка Double" + ANSI_RESET);
-            System.out.println("**************************");
-            System.out.println(ANSI_PURPLE + "Введіть оператор : " + ANSI_RESET);
-            String OperatorSymbol = sc.next();
-            System.out.println("**************************");
-            System.out.println(ANSI_YELLOW + "Введіть 2й операнд: " + ANSI_RESET);
-            double OperandSecond = sc.nextDouble();
-            Calculator<Double> DoubleCalculate = new Calculator<>(OperandFirst, OperandSecond);
-
-            switch (OperatorSymbol) {
-                case "+":
-                    System.out.println(ANSI_CYAN + "Add double " + DoubleCalculate.Addition(OperandFirst, OperandSecond) + ANSI_RESET);
-                    break;
-                case "-":
-                    System.out.println(ANSI_CYAN + "Sub double " + DoubleCalculate.Substract(OperandFirst, OperandSecond) + ANSI_RESET);
-                    break;
-                case "*":
-                    System.out.println(ANSI_CYAN + "Mul double " + DoubleCalculate.Multiple(OperandFirst, OperandSecond) + ANSI_RESET);
-                    break;
-                case "/":
-                    try {
-                        System.out.println(ANSI_CYAN + "Div double " + DoubleCalculate.Divide(OperandFirst, OperandSecond) + ANSI_RESET);
-                    } catch (Exception exception) {
-                        System.err.println("What are you doing dude ? Do you divide on Zero ?");
-                    }
-                    break;
-                default:
-                    System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
-                    break;
-            }
+        } catch (Exception exception) {
+            System.err.println("!*!*!*!*!*!*!*!* ПОМИЛКА ВЕДЕННЯ ЧИСЛОВИХ ЗНАЧЕНЬ , ВВЕДЕНІ ДАНІ НЕ ЯВЛЯЮТЬСЯ ЧИСЛОВИМИ ДЛЯ ОБРАХУНКУ ОПЕРАЦІЙ ;!*!*!*!*!*!*!*!");
         }
     }
 }
