@@ -4,10 +4,14 @@ import OOPLeason15.Task1.Addition;
 
 import java.util.Scanner;
 
+// Оголошуємо клас з Дженериком
 public class Calculator<GenericType> {
 
+    // Оголошуємо поля з Дженериком
     public GenericType operand1;
     public GenericType operand2;
+
+    // Конструктор з параметрами
 
     public Calculator(GenericType operand1, GenericType operand2) {
         this.operand1 = operand1;
@@ -15,10 +19,17 @@ public class Calculator<GenericType> {
         this.operand2 = operand2;
     }
 
+    // Порожні й за замовчуванням
+
     public Calculator() {
     }
 
+    // Методи додавання / віднімання / множення / ділення
+
     public GenericType Addition(GenericType operand1, GenericType operand2) {
+
+        // якщо першой операнд.витягуємо його клас Int порівнюємо його з класом обгорткою Integer і умова є вірною виконується перша гілка якщо ні то порівнюємо з Double
+        // у випадку недостовірності Integer та Double повертаємо нуль.
 
         if (operand1.getClass().equals(Integer.class)) {
             return (GenericType) (Object) ((Integer) operand1 + (Integer) operand2);
@@ -72,14 +83,20 @@ public class Calculator<GenericType> {
     }
 }
 
+// Створюємо основний клас що наслідує палітру
 class Main extends Colors {
 
+    // Старт програми
     public static void main(String[] args) {
 
+        // Сканер для вводу даних
         Scanner sc = new Scanner(System.in);
 
         System.out.println("**************************");
         System.out.println(ANSI_YELLOW + "Введіть 1й операнд: " + ANSI_RESET);
+
+        // Порівняння в умові if і якщо введене число є int то відпрацьовуємо умову калькуляції по цілочисленим
+        // якщо умова false то відпрацьовуємо Double.
         if (sc.hasNextInt()) {
 
             int OperandFirst = sc.nextInt();
@@ -91,8 +108,10 @@ class Main extends Colors {
             System.out.println(ANSI_YELLOW + "Введіть 2й операнд: " + ANSI_RESET);
             int OperandSecond = sc.nextInt();
 
+            // Створюємо обєкт з класом обгорткою Integer та двума операндами.
             Calculator<Integer> IntegerCalculate = new Calculator<>(OperandFirst, OperandSecond);
 
+            // Калькуляційна конструкція для відпрацювання методів при виборі оператору
             switch (OperatorSymbol) {
                 case "+":
                     System.out.println(ANSI_CYAN + "Add int " + IntegerCalculate.Addition(OperandFirst, OperandSecond) + ANSI_RESET);
@@ -104,6 +123,7 @@ class Main extends Colors {
                     System.out.println(ANSI_CYAN + "Mul int " + IntegerCalculate.Multiple(OperandFirst, OperandSecond) + ANSI_RESET);
                     break;
                 case "/":
+                    // Відпрацювання виключення при виникненні умови ділення на 0
                     try {
                         System.out.println(ANSI_CYAN + "Div int " + IntegerCalculate.Divide(OperandFirst, OperandSecond) + ANSI_RESET);
                     } catch (Exception exception) {
@@ -111,6 +131,7 @@ class Main extends Colors {
                     }
                     break;
                 default:
+                    // умова при якій немає сбігу з жодним з операторів
                     System.out.println(ANSI_RED + "Ви ввели неіснуючий математичний оператор для розрахунку + - * / " + ANSI_RESET);
                     break;
             }
