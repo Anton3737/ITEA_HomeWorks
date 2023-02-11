@@ -5,3 +5,4 @@ public class PrivateTestClass {
         System.out.println("Hi I am Private class");
     }
 }
+// приватний клас буде не доступним в Хабі
