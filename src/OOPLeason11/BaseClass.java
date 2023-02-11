@@ -55,14 +55,4 @@ public class BaseClass {
 
     }
 
-    class InsideDerived extends BaseClass{
-
-
-
-
-
-
-
-    }
-
 }
