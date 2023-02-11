@@ -1,4 +1,4 @@
-package Leason7;
+package Leason7.PRTClass;
 
 public class PrivateClass {
     public static void main(String[] args) {

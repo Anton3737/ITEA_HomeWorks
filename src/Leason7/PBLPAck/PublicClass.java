@@ -1,4 +1,4 @@
-package Leason7;
+package Leason7.PBLPAck;
 
 public class PublicClass {
     public static void main(String[] args) {
