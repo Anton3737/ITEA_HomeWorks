@@ -5,23 +5,24 @@ import java.util.Scanner;
 
 class DerivedClass extends BaseClass {
 
-    class ThirdClass extends DerivedClass {
+    public static void main(String[] args) {
+
+        System.out.println("----------------------max-------------------------");
+        BaseClass.MessageMethodMax();
+        BaseClass.MaxMethod();
+
+        System.out.println("----------------------min-------------------------");
+        BaseClass.MessageMethodMin();
+        BaseClass.MinMethod();
+
+        System.out.println("---------------------average----------------------");
+        BaseClass.MessageMethodAverage();
+        BaseClass.AverageMethod();
+    }
+
+    class ThirdClass extends BaseClass {
 
 
-        public static void main(String[] args) {
-
-            System.out.println("----------------------max-------------------------");
-            MessageMethodMax();
-            MaxMethod();
-
-            System.out.println("----------------------min-------------------------");
-            MessageMethodMin();
-            MinMethod();
-
-            System.out.println("---------------------average----------------------");
-            MessageMethodAverage();
-            AverageMethod();
-        }
     }
 }
 //

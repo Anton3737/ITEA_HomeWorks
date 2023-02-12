@@ -1,6 +1,5 @@
 package OOPLeason11;
 
-
 import java.util.Scanner;
 
 public class BaseClass {
