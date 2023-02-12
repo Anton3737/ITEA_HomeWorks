@@ -3,9 +3,10 @@ package OOPLeason11;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class DerivedClass  {
+class DerivedClass extends BaseClass {
 
-    class ThirdClass extends BaseClass {
+    class ThirdClass extends DerivedClass {
+
 
         public static void main(String[] args) {
 
@@ -21,8 +22,6 @@ class DerivedClass  {
             MessageMethodAverage();
             AverageMethod();
         }
-
-
     }
 }
 //
