@@ -65,9 +65,5 @@ public class ListIterator {
         for (Object arraysObj : arr) {
             System.out.println(arraysObj);
         }
-
-
     }
-
-
 }
