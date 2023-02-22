@@ -1,22 +1,14 @@
-package Leason21;
+package Leason21.Task1;
 
 import java.io.Serializable;
 
 public class Car implements Serializable {
-
     int wheels;
-
     int doors;
-
     String body_type;
-
     String name;
-
     String model;
-
-
     Engine engine;
-
     Special_modification modify;
 
     public Car(int wheels, int doors, String body_type, String name, String model, Engine engine, Special_modification modify) {
@@ -31,13 +23,9 @@ public class Car implements Serializable {
 }
 
 class Engine implements Serializable {
-
     int number_of_cylinders;
-
     int volume;
-
     double newton_meters;
-
     int hp_power;
 
     String fuel;
@@ -52,17 +40,11 @@ class Engine implements Serializable {
 }
 
 class Special_modification implements Serializable {
-
     String spoiler;
-
     String color;
-
     String wheels_disk;
-
     String neon;
-
     String turbo;
-
 
     public Special_modification(String spoiler, String color, String wheels_disk, String neon, String turbo) {
         this.spoiler = spoiler;

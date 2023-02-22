@@ -50,7 +50,7 @@ public class Test1 {
         Array.set(5,"Ferrari");
         System.out.println(Array);
 
-        Array.set(1,"Arabic Car");
+        Array.set(1,"Arabic Plane");
 
 
 //        Array.remove(2);
