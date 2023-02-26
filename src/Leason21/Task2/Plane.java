@@ -6,12 +6,19 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Plane implements Serializable {
+
     int wheels;
+
     int max_height;
+
     int cruiser_speed;
+
     int max_speed;
+
     int crew;
+
     int passengers;
+
     Plane_type plane_type;
 
     public Plane(int wheels, int max_height, int cruiser_speed, int max_speed, int crew, int passengers, Plane_type plane_type) {
@@ -43,7 +50,7 @@ public class Plane implements Serializable {
     }
 }
 
-class Plane_type implements Serializable {
+class Plane_type implements Serializable{
     String name;
     String manufacture;
     String type;
