@@ -30,7 +30,7 @@ public class Task7 {
         int multiplier = 2;
         int quantity = 12;
 
-        for (var i = 0; i <= quantity; i++) {
+        for (int i = 0; i <= quantity; i++) {
             startNumber = startNumber + (quantity - 1) * multiplier;
             System.out.print(startNumber + " " + "з ітерація: " + i + " | ");
         }
@@ -65,7 +65,7 @@ public class Task7 {
         int multiplier = 2;
         int quantity = 12;
 
-        for (var i = 0; i <= quantity - 1; i++) {
+        for (int i = 0; i <= quantity - 1; i++) {
             startNumber *= multiplier;
             System.out.print(startNumber + " | ");
         }
